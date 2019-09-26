@@ -5,6 +5,7 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const hbs = require("hbs");
 const session = require('express-session');
+const cors = require("cors");
 
 // Create routes (or a file path) to the js files that will contain AJAX requests
 var indexRouter = require('./routes/index');
@@ -23,6 +24,14 @@ app.use(function(req, res, next) {
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
   next();
 });
+
+app.use(cors({
+  origin: [
+    "http://localhost:4200"
+  ],
+
+  credentials: true
+}));
 
 // View engine setup
 app.set('views', path.join(__dirname, 'views'));
