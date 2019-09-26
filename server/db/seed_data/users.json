@@ -1,0 +1,38 @@
+[
+    {
+        "username": "Neo",
+        "email": "Neo@test.com",
+        "password": "pass1",
+        "is_admin": 1
+    },
+    {
+        "username": "Sara",
+        "email": "Sara@test.com",
+        "password": "pass2",
+        "is_admin": 0
+    },
+    {
+        "username": "Steve",
+        "email": "Steve@test.com",
+        "password": "pass3",
+        "is_admin": 1
+    },
+    {
+        "username": "Rob",
+        "email": "Rob@test.com",
+        "password": "pass4",
+        "is_admin": 0
+    },
+    {
+        "username": "Cate",
+        "email": "Cate@test.com",
+        "password": "pass5",
+        "is_admin": 1
+    },
+    {
+        "username": "Cori",
+        "email": "Cori@test.com",
+        "password": "pass6",
+        "is_admin": 0
+    }
+]
