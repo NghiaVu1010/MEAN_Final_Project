@@ -11,16 +11,21 @@ import { NavComponent } from './nav/nav.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { TeamsComponent } from './teams/teams.component';
-//import { UserComponent } from './user/user.component';
+import { EditProfileComponent } from './editProfile/editProfile.component';
+import { AdminComponent } from './admin/admin.component';
 
 import { AuthService } from './providers/auth.service';
-//import { UsersService } from './providers/users.service';
+import { UserService } from './providers/user.service';
+import { TeamsService } from './providers/teams.service';
+import { LeaguesService } from './providers/leagues.service';
 
 const appRoutes: Routes = [
   {path: "", component: HomeComponent},
   {path: "login", component: LoginComponent},
   {path: "register", component: RegisterComponent},
-  {path: "teams", component: TeamsComponent}
+  {path: "teams", component: TeamsComponent},
+  {path: "editProfile", component: EditProfileComponent},
+  {path: "admin", component: AdminComponent}
 ];
 
 @NgModule({
@@ -31,7 +36,9 @@ const appRoutes: Routes = [
     NavComponent,
     LoginComponent,
     RegisterComponent,
-    TeamsComponent
+    TeamsComponent,
+    AdminComponent,
+    EditProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -40,8 +47,10 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes)
   ],
   providers: [
-    AuthService
-    // UsersService
+    AuthService,
+    UserService,
+    TeamsService,
+    LeaguesService
   ],
   bootstrap: [AppComponent]
 })

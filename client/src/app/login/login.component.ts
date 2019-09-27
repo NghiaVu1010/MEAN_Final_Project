@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { AuthService } from './../providers/auth.service';
+import { AuthService } from '../providers/auth.service';
+import { UserService } from '../providers/user.service';
 
 @Component({
   selector: 'app-login',
@@ -18,7 +19,8 @@ export class LoginComponent implements OnInit {
   errMsg: string = "";
 
   constructor(
-    private authService: AuthService, 
+    private authService: AuthService,
+    private userService: UserService, 
     private router: Router) {}
 
   ngOnInit() {}
@@ -37,12 +39,17 @@ export class LoginComponent implements OnInit {
       this.errMsg = "";
 
       // Call AuthService to authenticate
-      this.authService.login(this.userName, this.password).subscribe(data => {
+      this.userService.login(this.userName, this.password).subscribe(data => {
         if (data['error']) {
           this.errMsg = 'Login unsuccessful.';
           this.error = true;
+          this.authService.setAuthStatus(false);
         } 
         else {
+          if(data["is_admin"] == 1) {
+            this.authService.setAdminStatus(true);
+          }
+          this.authService.setAuthStatus(true);
           this.router.navigate(['teams'], {queryParams: {username: this.userName}});
         }
       });
