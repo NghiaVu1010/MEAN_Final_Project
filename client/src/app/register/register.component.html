@@ -21,12 +21,17 @@
 
         <div class="form-group">
           <label for="inputEmail">Confirm Password</label>
-          <input type="password" id="confirmPassword" class="form-control" name="confirmPassword" [(ngModel)]="confirmPassword" placeholder="Confirm Password" required autofocus autocomplete="new-password">
+          <input type="password" id="confirmPassword" class="form-control" name="confirmPassword" [(ngModel)]="confirmPassword" placeholder="Confirm Password" required autocomplete="new-password">
           <small id="passMsg"></small>
         </div>
         
-        <button class="btn btn-lg btn-success btn-block" type="button" (click)="onRegister">Register</button>
+        <button class="btn btn-lg btn-success btn-block" type="button" (click)="onRegister()">Register</button>
       </div>
     </form>
+  </div>
+
+  <div class="container">
+    <br />
+    <div class="alert alert-danger" *ngIf="error">{{errMsg}}</div>
   </div>
 </main>
