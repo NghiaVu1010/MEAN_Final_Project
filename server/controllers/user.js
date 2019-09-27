@@ -21,7 +21,7 @@ UserController.login = (req, res) => {
                 req.session.is_admin = users.is_admin;
                 res.json(users);
             } else {
-                res.end('No Users found.');
+                res.json({"error": "No user found"});
             }
         })
         .catch((err) => {

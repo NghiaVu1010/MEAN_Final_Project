@@ -11,16 +11,16 @@ import { NavComponent } from './nav/nav.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { TeamsComponent } from './teams/teams.component';
-//import { LoginComponent } from './login/login.component';
-//import { DashboardComponent } from './dashboard/dashboard.component';
 //import { UserComponent } from './user/user.component';
 
-//import { AuthService } from './providers/auth.service';
+import { AuthService } from './providers/auth.service';
 //import { UsersService } from './providers/users.service';
 
 const appRoutes: Routes = [
   {path: "", component: HomeComponent},
-  //{path: 'users', component: UserComponent}
+  {path: "login", component: LoginComponent},
+  {path: "register", component: RegisterComponent},
+  {path: "teams", component: TeamsComponent}
 ];
 
 @NgModule({
@@ -40,7 +40,8 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes)
   ],
   providers: [
-
+    AuthService
+    // UsersService
   ],
   bootstrap: [AppComponent]
 })
