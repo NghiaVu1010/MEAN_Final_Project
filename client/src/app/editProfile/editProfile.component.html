@@ -1,5 +1,3 @@
-<app-nav></app-nav>
-
 <main>
   <!-- <div id="chefBanner"><div> -->
   <div class="container">
@@ -9,12 +7,12 @@
 
         <div class="form-group">
           <label for="inputEmail">Email address</label>
-          <input type="text" id="inputEmail" class="form-control" placeholder="Email address" required autofocus autocomplete="username email">
+          <input ([ngModel])="email" type="text" id="inputEmail" class="form-control" placeholder="Email address" required autofocus autocomplete="username email">
         </div>
         
-        <button class="btn btn-lg btn-success btn-block" type="submit">Save Changes</button>
-        <button class="btn btn-lg btn-secondary btn-block" type="button" id="cancelProBtn">Cancel</button>
-        <button class="btn btn-lg btn-danger btn-block" type="button" id="deleteProBtn">Delete</button>
+        <button class="btn btn-lg btn-success btn-block" type="button" (click)="onUpdate()">Save Changes</button>
+        <!-- <button class="btn btn-lg btn-secondary btn-block" type="button" id="cancelProBtn">Cancel</button> -->
+        <button class="btn btn-lg btn-danger btn-block" type="button" id="deleteProBtn" (click)="onDelete()">Delete</button>
       </div>
     </form>
   </div>

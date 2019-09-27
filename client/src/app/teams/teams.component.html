@@ -15,11 +15,10 @@
       <div class="row">
         <div class="col-lg-3">
 
-          <select (change)="onSelect()" class="custom-select" id="divisionDDL" required>
+          <select (change)="onSelect($event.target.value)" class="custom-select" id="divisionDDL" required>
             <option selected value="0" id="defaultChoose">Choose...</option>
-            <option *ngFor="let division of leagues" [ngValue]="division" value="{{division.Code}}" id="{{division.Code}}">{{division.Name}}</option>
+            <option *ngFor="let division of leagues" value="{{division.Code}}" id="{{division.Code}}">{{division.Name}}</option>
           </select>
-          <!-- {{selected | json}} -->
         </div>
       
         <!-- Add/ViewAll/Reset button-->
@@ -63,6 +62,13 @@
         </tr>
       </thead>
       <tbody class="white" id="teamBody">
+        <tr *ngFor="let team of teams">
+          <td>{{team.TeamName}}</td>
+          <td>{{team.ManagerName}}</td>
+          <td>{{team.ManagerEmail}}</td>
+          <td>{{team.Members.length}} (max: {{team.MaxTeamMembers}})</td>
+          <td>Edit / Delete</td>
+        </tr>
       </tbody>
     </table>
     <div id="emptyDiv"></div>

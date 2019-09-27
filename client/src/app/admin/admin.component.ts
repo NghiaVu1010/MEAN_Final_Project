@@ -16,14 +16,19 @@ export class AdminComponent implements OnInit {
   users: Array<User> = [];
 
   constructor(
+    private authService: AuthService, 
     private userService: UserService, 
     private router: Router
   ) {}
 
   ngOnInit() {
+    if(!this.authService.getAdminStatus()) {
+      this.router.navigate(['login']);
+    }
+
     this.userService.getUsers().subscribe(data => {
       data.forEach((user, index) => {
-        this.users.push(new User(user.ID, user.username, user.email, user.password));
+        this.users.push(new User(user.id, user.username, user.email));
       })
     });
   }

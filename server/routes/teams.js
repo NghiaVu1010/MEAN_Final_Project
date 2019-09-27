@@ -3,10 +3,6 @@ var express = require('express');
 var teamsRouter = express.Router();
 const controllers = require('../controllers/teams');
 
-// GET teams page
-// http://localhost:3000/teams
-teamsRouter.get('/', controllers.renderTeams);
-
 // GET all teams data
 // http://localhost:3000/teams/data
 teamsRouter.get('/data', controllers.getTeams);

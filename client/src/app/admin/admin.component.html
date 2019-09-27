@@ -10,14 +10,16 @@
     <table class="table m-3" id="userTable">
       <thead id="teamHead">
         <tr>
+          <th class="white">User ID</th>
           <th class="white">User Name</th>
           <th class="white">Email</th>
         </tr>
       </thead>
       <tbody class="white" id="teamBody">
         <tr *ngFor="let user of users">
-          <td>{{user.username}}</td>
-          <td>{{user.email}}</td>
+          <td>{{user.userId}}</td>
+          <td>{{user.userName}}</td>
+          <td>{{user.emailAddress}}</td>
         </tr>
       </tbody>
     </table>

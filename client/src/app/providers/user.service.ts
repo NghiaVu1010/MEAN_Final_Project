@@ -22,6 +22,11 @@ export class UserService {
     .pipe(map(res => <any[]>res));
   }
 
+  getUserById(userId: number) {
+    return this.http.get(`${this.usersEndpoint}data/${userId}`, this.httpOptions)
+    .pipe(map(res => <any[]>res));
+  }
+
   login(userName: string, password: string) {
       return this.http.post(`${this.usersEndpoint}login`, {username : userName, password : password}, this.httpOptions)
       .pipe(map(res => <any[]>res));
