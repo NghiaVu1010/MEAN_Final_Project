@@ -1,3 +1,5 @@
+<app-nav></app-nav>
+
 <main>
   <!-- Custom Header with customized button -->
   <header class="container text-center bronze obli mt-5">
@@ -14,19 +16,23 @@
       <!-- Drop down selection of divisons -->
       <div class="row">
         <div class="col-lg-3">
-          <select class="custom-select" id="divisionDDL" required>
+
+          <select (change)="onSelect()" class="custom-select" id="divisionDDL" required>
             <option selected value="0" id="defaultChoose">Choose...</option>
+            <option *ngFor="let division of leagues" [ngValue]="division" value="{{division.Code}}" id="{{division.Code}}">{{division.Name}}</option>
           </select>
+          <!-- {{selected | json}} -->
         </div>
       
         <!-- Add/ViewAll/Reset button-->
         <div class="col-lg-3">
-          <button type="button" class="btn btn-primary" id="viewAllBtn">View All</button>
+          <button type="button" class="btn btn-primary" id="viewAllBtn" (click)="viewAll()">View All</button>
           <button type="reset" class="btn btn-secondary" id="resetBtn">Reset</button>
         </div>
       </div>
       
-      <p class="white" id="divisionDetails"></p>
+      <p *ngFor="let division of leagues" class="white" id="divisionDetails">{{division.Description}}</p>
+
       <!-- Filter by gender -->
       <div class="white">
         <h4>Filter by:</h4>

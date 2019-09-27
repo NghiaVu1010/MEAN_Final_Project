@@ -7,10 +7,27 @@
   <!-- Nav bar links -->
   <div class="collapse navbar-collapse" id="navbarTop">
     <ul class="navbar-nav ml-auto">
-      <li class="nav-item">
+      <li *ngIf="!isAuth" class="nav-item">
         <a class="nav-link bold bronze shadows" href="/register">Register</a>
       </li>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link bold bronze shadows" href="/admin">Admin</a>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link bold bronze shadows" href="/teams">Teams</a>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link bold bronze shadows" href="/editProfile">Edit Profile</a>
+      </li>
+
       <li class="nav-item">
+        <a class="nav-link bold bronze shadows" href="/" (click)="onLogout">Logout</a>
+      </li>
+
+      <li *ngIf="!isAuth" class="nav-item">
         <a class="nav-link bold bronze shadows" href="/login">Login</a>
       </li>
     </ul>

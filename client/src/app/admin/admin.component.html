@@ -1,0 +1,26 @@
+<app-nav></app-nav>
+
+<main>
+  <!-- Custom Header with customized button -->
+  <header class="container text-center bronze obli mt-5">
+    <h1 class="shadows">Admin View</h1>
+  </header>
+  <!-- Table to display team info -->
+  <div class="container">
+    <table class="table m-3" id="userTable">
+      <thead id="teamHead">
+        <tr>
+          <th class="white">User Name</th>
+          <th class="white">Email</th>
+        </tr>
+      </thead>
+      <tbody class="white" id="teamBody">
+        <tr *ngFor="let user of users">
+          <td>{{user.username}}</td>
+          <td>{{user.email}}</td>
+        </tr>
+      </tbody>
+    </table>
+    <div id="emptyDiv"></div>
+  </div>
+</main>

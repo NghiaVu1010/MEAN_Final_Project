@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { AuthService } from './../providers/auth.service';
+import { UserService } from '../providers/user.service';
 
 @Component({
   selector: 'app-register',
@@ -20,7 +20,7 @@ export class RegisterComponent implements OnInit {
   errMsg: string = "";
 
   constructor(
-    private authService: AuthService, 
+    private userService: UserService, 
     private router: Router) {}
 
   ngOnInit() {}
@@ -55,7 +55,7 @@ export class RegisterComponent implements OnInit {
       this.errMsg = '';
 
       // Call UserService to Register
-      this.authService.register(this.userName, this.email, this.password).subscribe(data => {
+      this.userService.register(this.userName, this.email, this.password).subscribe(data => {
         if (data['error']) {
           this.errMsg = 'Registration unsuccessful.';
           this.error = true;
