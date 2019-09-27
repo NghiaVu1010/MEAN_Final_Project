@@ -8,17 +8,6 @@ function getMatchingTeamsByLeague(leagueCode, data) {
     return matches;
 }
 
-// GET: Renders teams at http://localhost:3000/teams
-TeamsController.renderTeams = (req, res) => {
-    // Grabs and checks if the user is in session
-    if(req.session.username) {
-        res.render('teams', { sheet: 'teams' });
-    }
-    else {
-        res.redirect('/users/register');
-    }
-};
-
 // GET: Returns the teams JSON file data
 TeamsController.getTeams = (req, res) => {
     try {

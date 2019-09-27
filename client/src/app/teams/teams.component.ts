@@ -14,8 +14,6 @@ export class TeamsComponent implements OnInit {
 
   leagues: Array<any> = [];
   teams: Array<any> = [];
-  leaguesByTeams: Array<any> = [];
-  selected;
 
   constructor(
     private authService: AuthService,
@@ -31,17 +29,18 @@ export class TeamsComponent implements OnInit {
     this.leaguesService.getLeagues().subscribe(data => {
       this.leagues = data;
     });
+  }
 
-    this.teamsService.getTeams().subscribe(data => {
+  onSelect(val) {
+    console.log(val);
+    this.teamsService.getTeamsByLeagues(val).subscribe(data => {
       this.teams = data;
     });
   }
 
-  onSelect() {
-    console.log(this.selected);
-  }
-
   viewAll(): void {
-    console.log(this.leagues);
+    this.teamsService.getTeams().subscribe(data => {
+      this.teams = data;
+    });
   }
 }

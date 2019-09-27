@@ -3,9 +3,21 @@ var userService = require('../services/userService');
 
 var UserController = {};
 
-// GET: Renders login at http://localhost:3000/users/login
-UserController.renderLogin = (req, res) => {
-    res.render('login', { sheet: 'login' });
+// GET: Gets the user data from list
+UserController.getData = (req, res) => {
+    userService.list()
+        .then((users) => {
+            if (users) {
+                res.json(users);
+            } 
+            else {
+                res.end('No Users found.');
+            }
+        })
+        .catch((err) => {
+            console.log(`Listing Users error: ${err}`);
+            res.end('Listing Users error.');
+        });
 };
 
 // POST: Collects login information to be passed
@@ -35,12 +47,6 @@ UserController.logout = (req, res) => {
     // Invalidate username in session - until next login
     req.session.username = null;
     req.session.is_admin = null;
-    res.redirect('/');
-};
-
-// GET: Renders registration at http://localhost:3000/users/register
-UserController.renderRegister = (req, res) => {
-    res.render('register', { sheet: 'register' });
 };
 
 // POST: Collects registration info to be passed
@@ -57,11 +63,6 @@ UserController.register = (req, res) => {
             console.log(`Creating User error: ${err}`);
             res.end('Creating User error.');
         });
-};
-
-// GET: Renders settings at http://localhost:3000/users/settings/:id
-UserController.renderSettings = (req, res) => {
-    res.render('settings', { sheet: 'settings' });
 };
 
 // PUT: Collects updated settings to be passed
