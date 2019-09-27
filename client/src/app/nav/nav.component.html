@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-md navbar-dark fixed-top" id="menu_bar">
-  <a class="navbar-brand obli bronze shadows" href="/">Iron Chef</a>
+  <a class="navbar-brand obli bronze shadows" (click)="goHere('/')">Iron Chef</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTop" aria-controls="navbarTop" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -7,28 +7,28 @@
   <!-- Nav bar links -->
   <div class="collapse navbar-collapse" id="navbarTop">
     <ul class="navbar-nav ml-auto">
-      <li *ngIf="!isAuth" class="nav-item">
-        <a class="nav-link bold bronze shadows" href="/register">Register</a>
+      <li *ngIf="getAdmin()"  class="nav-item">
+        <a class="nav-link bold bronze shadows" (click)="goHere('admin')">Admin</a>
       </li>
 
-      <li class="nav-item dropdown">
-        <a class="nav-link bold bronze shadows" href="/admin">Admin</a>
+      <li *ngIf="getAuth()"  class="nav-item">
+        <a class="nav-link bold bronze shadows" (click)="goHere('teams')">Teams</a>
       </li>
 
-      <li class="nav-item dropdown">
-        <a class="nav-link bold bronze shadows" href="/teams">Teams</a>
+      <li *ngIf="getAuth()"  class="nav-item">
+        <a class="nav-link bold bronze shadows" (click)="goHere('editProfile')">Edit Profile</a>
       </li>
 
-      <li class="nav-item dropdown">
-        <a class="nav-link bold bronze shadows" href="/editProfile">Edit Profile</a>
+      <li *ngIf="getAuth()" class="nav-item">
+        <a class="nav-link bold bronze shadows" (click)="onLogout()">Logout</a>
       </li>
 
-      <li class="nav-item">
-        <a class="nav-link bold bronze shadows" href="/" (click)="onLogout">Logout</a>
+      <li *ngIf="!getAuth()" class="nav-item">
+        <a class="nav-link bold bronze shadows" (click)="goHere('register')">Register</a>
       </li>
 
-      <li *ngIf="!isAuth" class="nav-item">
-        <a class="nav-link bold bronze shadows" href="/login">Login</a>
+      <li *ngIf="!getAuth()" class="nav-item">
+        <a class="nav-link bold bronze shadows" (click)="goHere('login')">Login</a>
       </li>
     </ul>
   </div>

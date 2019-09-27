@@ -55,4 +55,8 @@ export class LoginComponent implements OnInit {
       });
     }
   }
+
+  goHere(route: string) : void {
+    this.router.navigate([route]);
+  }
 }
