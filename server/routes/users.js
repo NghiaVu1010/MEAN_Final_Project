@@ -7,6 +7,10 @@ const controllers = require('../controllers/user');
 // http://localhost:3000/users/data
 router.get('/data', controllers.getData);
 
+// GET the data by id
+// http://localhost:3000/users/data/:id
+router.get('/data/:id', controllers.getDataById);
+
 // POST login info
 router.post('/login', controllers.login);
 
