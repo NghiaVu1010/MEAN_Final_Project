@@ -24,9 +24,9 @@ export class TeamsComponent implements OnInit {
     private router: Router) {}
 
   ngOnInit() {
-    // if(!this.authService.getAuthStatus()) {
-    //   this.router.navigate(['login']);
-    // }
+    if(!this.authService.getAuthStatus()) {
+      this.router.navigate(['login']);
+    }
     
     this.leaguesService.getLeagues().subscribe(data => {
       this.leagues = data;

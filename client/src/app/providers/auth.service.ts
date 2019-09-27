@@ -7,15 +7,14 @@ export class AuthService {
 
   constructor() {}
 
-  private isAuth: boolean;
-  private isAdmin: boolean;
+  private isAuth: boolean = false;
+  private isAdmin: boolean = false;
 
   setAuthStatus(status: boolean) {
     this.isAuth = status;
   }
 
   getAuthStatus() {
-    console.log("AUTH SERVICE"+this.isAuth);
     return this.isAuth;
   }
 
@@ -24,7 +23,6 @@ export class AuthService {
   }
 
   getAdminStatus() {
-    console.log("ADMIN SERVICE"+this.isAdmin);
     return this.isAdmin;
   }
 }

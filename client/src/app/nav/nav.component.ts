@@ -10,24 +10,27 @@ import { AuthService } from './../providers/auth.service';
 })
 export class NavComponent implements OnInit {
 
-  private isAuth: boolean = false;
-  private isAdmin: boolean = false;
-
   constructor(
     private authService: AuthService,
     private router: Router
   ) {}
 
-  ngOnInit() {
-    this.isAuth = this.authService.getAuthStatus();
-    this.isAdmin = this.authService.getAdminStatus();
+  ngOnInit() {}
 
-    // console.log(this.isAuth);
-    // console.log(this.isAdmin);
+  getAuth(): boolean {
+    return this.authService.getAuthStatus();
+  }
+  getAdmin(): boolean {
+    return this.authService.getAdminStatus();
   }
 
   onLogout(): void {
     this.authService.setAuthStatus(false);
     this.authService.setAdminStatus(false);
+    this.router.navigate([""]);
+  }
+
+  goHere(route: string) : void {
+    this.router.navigate([route]);
   }
 }
