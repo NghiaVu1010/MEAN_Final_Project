@@ -4,8 +4,20 @@ const User = require("../db/connection").Users;
 
 var userService = {};
 
+// Find all users that are not admin
 userService.list = () => {
     return User.findAll({ where: { is_admin: 0 } })
+        .then(users => {
+            return users;
+        })
+        .catch(error => {
+            throw error;
+        })
+};
+
+// Find one user by id
+userService.listById = (userObj) => {
+    return User.findOne({ where: userObj })
         .then(users => {
             return users;
         })

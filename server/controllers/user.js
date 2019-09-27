@@ -20,6 +20,24 @@ UserController.getData = (req, res) => {
         });
 };
 
+// GET: Gets the user data by id from list
+UserController.getDataById = (req, res) => {
+    userService.listById({id: req.params.id})
+        .then((users) => {
+            if (users) {
+                res.json(users);
+            } 
+            else {
+                res.end('No User found.');
+            }
+        })
+        .catch((err) => {
+            console.log(`Listing User error: ${err}`);
+            res.end('Listing User error.');
+        });
+};
+
+
 // POST: Collects login information to be passed
 UserController.login = (req, res) => {
     userService.login({

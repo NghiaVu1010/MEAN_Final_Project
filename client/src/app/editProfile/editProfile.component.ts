@@ -25,21 +25,22 @@ export class EditProfileComponent implements OnInit {
 
     this.userService.getUserById(this.uniqueId).subscribe(data => {
       this.email = data["email"];
+      console.log(this.email);
     });
   }
   
   onUpdate(): void {
     // Call UserService to update User
     this.userService.updateUser(this.uniqueId, this.email).subscribe(data => {
-      window.location.reload();
+      //window.location.reload();
+      this.router.navigate(["editProfile"]);
     });
   }
 
-  onDelete(userId: number): void {
+  onDelete(): void {
     // Call UserService to delete User
-    this.userService.deleteUser(userId).subscribe(data => {
-      //this.router.navigate(['home']);
-      window.location.reload();
+    this.userService.deleteUser(this.uniqueId).subscribe(data => {
+      this.router.navigate([""]);
     });
   }
 }
