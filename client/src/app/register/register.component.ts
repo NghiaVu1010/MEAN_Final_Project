@@ -9,6 +9,7 @@ import { AuthService } from './../providers/auth.service';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
+
   title = "Register";
   userName: string = "";
   email: string = "";
@@ -28,22 +29,28 @@ export class RegisterComponent implements OnInit {
     if (this.userName == '') {
       this.errMsg = 'User name is required.';
       this.error = true;
-    } else if (this.email == '') {
+    } 
+    else if (this.email == '') {
       this.errMsg = 'Email Address is required.';
       this.error = true;
-    } else if (this.password == '') {
+    } 
+    else if (this.password == '') {
       this.errMsg = 'Password is required.';
       this.error = true;
-    } else if (this.password.length < 8) {
+    } 
+    else if (this.password.length < 8) {
       this.errMsg = 'Password must be at least 8 chars.';
       this.error = true;
-    } else if (this.confirmPassword == '') {
+    } 
+    else if (this.confirmPassword == '') {
       this.errMsg = 'Please confirm password.';
       this.error = true;
-    } else if (this.password != this.confirmPassword) {
+    } 
+    else if (this.password != this.confirmPassword) {
       this.errMsg = 'Passwords do not match';
       this.error = true;
-    } else {
+    } 
+    else {
       this.error = false;
       this.errMsg = '';
 
