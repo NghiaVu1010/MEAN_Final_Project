@@ -21,4 +21,9 @@ export class AuthService {
       return this.http.post(`${this.usersEndpoint}login`, {username : userName, password : password}, this.httpOptions)
       .pipe(map(res => <any[]>res));
   }
+
+  register(userName: string, email: string, password: string) {
+      return this.http.post(`${this.usersEndpoint}register`, {username : userName, email : email, password : password}, this.httpOptions)
+      .pipe(map(res => <any[]>res));
+  }
 }
