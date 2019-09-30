@@ -19,7 +19,7 @@ TeamsController.getTeams = (req, res) => {
     }
 };
 
-// GET: Returns the teams by league from JSON file data - WIP
+// GET: Returns the teams by league from JSON file data
 TeamsController.getTeamsByLeague = (req, res) => {
     try {
         data = JSON.parse(fs.readFileSync("./data/teams.json"));

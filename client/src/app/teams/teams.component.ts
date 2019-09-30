@@ -40,6 +40,7 @@ export class TeamsComponent implements OnInit {
 
   // On selection of the DDL, populate table with teams
   onSelect(val) {
+    // Filter based on selection
     this.currTeams = this.teams.filter((t) => {
       return t.League === val;
     });
