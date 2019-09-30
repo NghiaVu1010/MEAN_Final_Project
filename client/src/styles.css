@@ -3,10 +3,6 @@ body {
     background: linear-gradient(to left, #800000 0%, #000000 100%);
 }
 
-a {
-    color: #00B7FF;
-}
-
 .center {
     display: block;
     margin-left: auto;
