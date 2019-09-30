@@ -22,10 +22,12 @@ export class AdminComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    // Check to see if user is Auth to be here
     if(!this.authService.getAdminStatus()) {
       this.router.navigate(['login']);
     }
 
+    // Display info on all users who aren't admin
     this.userService.getUsers().subscribe(data => {
       data.forEach((user, index) => {
         this.users.push(new User(user.id, user.username, user.email));
