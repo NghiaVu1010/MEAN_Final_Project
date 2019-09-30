@@ -46,9 +46,6 @@ UserController.login = (req, res) => {
         })
         .then((users) => {
             if (users) {
-                // Stores username/is_admin in session for traversing
-                req.session.username = users.username;
-                req.session.is_admin = users.is_admin;
                 res.json(users);
             } else {
                 res.json({"error": "No user found"});
@@ -58,13 +55,6 @@ UserController.login = (req, res) => {
             console.log(`Login Users error: ${err}`);
             res.end('Login Users error.');
         });
-};
-
-// GET: Logout user and redirect to homepage
-UserController.logout = (req, res) => {
-    // Invalidate username in session - until next login
-    req.session.username = null;
-    req.session.is_admin = null;
 };
 
 // POST: Collects registration info to be passed

@@ -14,9 +14,6 @@ router.get('/data/:id', controllers.getDataById);
 // POST login info
 router.post('/login', controllers.login);
 
-// GET request for logout and redirect
-router.get('/logout', controllers.logout);
-
 // POST the registration info
 router.post('/register', controllers.register);
 

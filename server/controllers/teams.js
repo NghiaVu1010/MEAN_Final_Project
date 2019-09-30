@@ -1,8 +1,9 @@
-// Controller for teams
+// Controllers for teams
 var fs = require('fs');
 
 var TeamsController = {};
 
+// Get all matching teams that have this league code
 function getMatchingTeamsByLeague(leagueCode, data) {
     let matches = data.filter( t => t.League == leagueCode );
     return matches;
