@@ -14,7 +14,7 @@ export class TeamsComponent implements OnInit {
 
   leagues: Array<any> = [];
   teams: Array<any> = [];
-  divisDesc: string = "";
+  currTeams: Array<any> = [];
 
   constructor(
     private authService: AuthService,
@@ -32,24 +32,26 @@ export class TeamsComponent implements OnInit {
     this.leaguesService.getLeagues().subscribe(data => {
       this.leagues = data;
     });
-  }
 
-  // On selection of the DDL, populate table with teams
-  onSelect(val) {
-    this.teamsService.getTeamsByLeagues(val).subscribe(data => {
-      this.teams = data;
-    });
-  }
-
-  // On click, populate table with all teams
-  viewAll(): void {
     this.teamsService.getTeams().subscribe(data => {
       this.teams = data;
     });
   }
 
+  // On selection of the DDL, populate table with teams
+  onSelect(val) {
+    this.currTeams = this.teams.filter((t) => {
+      return t.League === val;
+    });
+  }
+
+  // On click, populate table with all teams
+  viewAll(): void {
+    this.currTeams = this.teams;
+  }
+
   // On click, reset view of teams
   resetBtn(): void {
-    this.teams = [];
+    this.currTeams = [];
   }
 }
