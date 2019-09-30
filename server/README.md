@@ -29,6 +29,12 @@ $ cd server
 $ npm start
 ```
 
+## Start Server in Inspect Mode
+```
+$ cd server
+$ npm run dev
+```
+
 ### Routes/Contract
 #### Leagues
 ```
