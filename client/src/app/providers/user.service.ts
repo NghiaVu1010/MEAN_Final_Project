@@ -17,27 +17,27 @@ export class UserService {
 
   constructor(private http: HttpClient) {}
 
-  getUsers() {
+  getUsers() : Observable<any> {
     return this.http.get(`${this.usersEndpoint}data`, this.httpOptions)
     .pipe(map(res => <any[]>res));
   }
 
-  getUserById(userId: number) {
+  getUserById(userId: number) : Observable<any> {
     return this.http.get(`${this.usersEndpoint}data/${userId}`, this.httpOptions)
     .pipe(map(res => <any[]>res));
   }
 
-  login(userName: string, password: string) {
+  login(userName: string, password: string) : Observable<any> {
       return this.http.post(`${this.usersEndpoint}login`, {username : userName, password : password}, this.httpOptions)
       .pipe(map(res => <any[]>res));
   }
 
-  register(userName: string, email: string, password: string) {
+  register(userName: string, email: string, password: string) : Observable<any> {
       return this.http.post(`${this.usersEndpoint}register`, {username : userName, email : email, password : password}, this.httpOptions)
       .pipe(map(res => <any[]>res));
   }
 
-  updateUser(userId: number, email: string) {
+  updateUser(userId: number, email: string) : Observable<any> {
     return this.http.put(`${this.usersEndpoint}settings/${userId}`, {email: email}, this.httpOptions)
       .pipe(map(res => <any[]>res));
   }

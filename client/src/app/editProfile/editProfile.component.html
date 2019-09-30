@@ -28,7 +28,7 @@
     <p>Email updated!</p>
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn btn-outline-dark" (click)="onUpdate()" (click)="modal.close('Save click')">Ok</button>
+    <button type="button" class="btn btn-outline-dark" ngbAutofocus (click)="onUpdate()" (click)="modal.close('Save click')">Ok</button>
   </div>
 </ng-template>
 
@@ -45,6 +45,6 @@
   </div>
   <div class="modal-footer">
     <button type="button" class="btn btn-outline-dark" (click)="modal.dismiss('cancel click')">Cancel</button>
-    <button type="button" class="btn btn-outline-dark" (click)="onDelete()" (click)="modal.close('Save click')">Ok</button>
+    <button type="button" class="btn btn-outline-dark" ngbAutofocus (click)="onDelete()" (click)="modal.close('Save click')">Ok</button>
   </div>
 </ng-template>

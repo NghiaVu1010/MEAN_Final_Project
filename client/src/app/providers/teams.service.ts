@@ -17,12 +17,12 @@ export class TeamsService {
 
   constructor(private http: HttpClient) {}
 
-  getTeams() {
+  getTeams() : Observable<any> {
     return this.http.get(`${this.usersEndpoint}data`, this.httpOptions)
     .pipe(map(res => <any[]>res));
   }
 
-  getTeamsByLeagues(id: string) {
+  getTeamsByLeagues(id: string) : Observable<any> {
     return this.http.get(`${this.usersEndpoint}data/byleague/${id}`, this.httpOptions)
     .pipe(map(res => <any[]>res));
   }

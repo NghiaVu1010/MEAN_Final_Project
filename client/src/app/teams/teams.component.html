@@ -48,7 +48,10 @@
           <td>{{team.ManagerName}}</td>
           <td>{{team.ManagerEmail}}</td>
           <td>{{team.Members.length}} (max: {{team.MaxTeamMembers}})</td>
-          <td>Edit / Delete</td>
+          <td>
+            <button type="button" class="btn btn-outline-success mx-1" id="Team{{team.TeamId}}">Details</button>
+            <button type="button" class="btn btn-outline-danger mx-1" id="Team{{team.TeamId}}">Delete</button>
+          </td>
         </tr>
       </tbody>
     </table>
