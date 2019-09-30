@@ -12,15 +12,19 @@ router.get('/data', controllers.getData);
 router.get('/data/:id', controllers.getDataById);
 
 // POST login info
+// http://localhost:3000/users/login
 router.post('/login', controllers.login);
 
 // POST the registration info
+// http://localhost:3000/users/register
 router.post('/register', controllers.register);
 
 // PUT the update into current profile by id
+// http://localhost:3000/users/settings/:id
 router.put("/settings/:id", controllers.update)
 
 // Delete the current profile by id
+// http://localhost:3000/users/settings/:id
 router.delete("/settings/:id", controllers.delete)
 
 module.exports = router;

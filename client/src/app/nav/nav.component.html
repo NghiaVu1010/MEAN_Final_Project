@@ -20,7 +20,7 @@
       </li>
 
       <li *ngIf="getAuth()" class="nav-item">
-        <a class="nav-link bold bronze shadows" (click)="onLogout()">Logout</a>
+        <a class="nav-link bold bronze shadows" routerLink="/logout" (click)="onLogout()">Logout</a>
       </li>
 
       <li *ngIf="!getAuth()" class="nav-item" routerLinkActive="active">
