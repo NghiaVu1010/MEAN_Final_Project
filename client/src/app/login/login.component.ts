@@ -26,6 +26,7 @@ export class LoginComponent implements OnInit {
   ngOnInit() {}
 
   onLogin(): void {
+    // Validation for login
     if (this.userName == "") {
       this.errMsg = "User name is required.";
       this.error = true;
@@ -47,6 +48,7 @@ export class LoginComponent implements OnInit {
           this.authService.setUniqueId(0);
         } 
         else {
+          // Set Admin status if they are an admin
           if(data["is_admin"] == 1) {
             this.authService.setAdminStatus(true);
           }
@@ -58,6 +60,7 @@ export class LoginComponent implements OnInit {
     }
   }
 
+  // Navigate based on clicked link
   goHere(route: string) : void {
     this.router.navigate([route]);
   }

@@ -26,6 +26,7 @@ export class RegisterComponent implements OnInit {
   ngOnInit() {}
 
   onRegister(): void {
+    // Validation for form
     if (this.userName == '') {
       this.errMsg = 'User name is required.';
       this.error = true;

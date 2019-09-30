@@ -26,12 +26,8 @@
         </div>
         
         <button class="btn btn-lg btn-success btn-block" type="button" (click)="onRegister()">Register</button>
+        <div class="mt-4 alert alert-danger" *ngIf="error">{{errMsg}}</div>
       </div>
     </form>
-  </div>
-
-  <div class="container">
-    <br />
-    <div class="alert alert-danger" *ngIf="error">{{errMsg}}</div>
   </div>
 </main>
