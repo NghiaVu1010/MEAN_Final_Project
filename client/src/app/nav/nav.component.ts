@@ -32,9 +32,4 @@ export class NavComponent implements OnInit {
     this.authService.setAdminStatus(false);
     this.router.navigate([""]);
   }
-
-  // Navigate based on clicked link
-  goHere(route: string) : void {
-    this.router.navigate([route]);
-  }
 }
