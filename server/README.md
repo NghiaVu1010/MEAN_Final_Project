@@ -21,6 +21,8 @@ $ node migrate
 $ node seed
 ```
 
+![PostgreSQL](img/pgAdminPic.png)
+
 ## Start Server
 ```
 $ cd server
@@ -83,6 +85,8 @@ DELETE - http://localhost:3000/users/settings/:id
 ### Test
 + run ```npm start```
 + Test using Postman Collection
+
+![Postman](img/PostmanPic.png)
 
 ### Useful link(s)
 * [Node.js](https://nodejs.org/en/)
