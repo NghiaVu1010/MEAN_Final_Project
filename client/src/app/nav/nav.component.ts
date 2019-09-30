@@ -17,19 +17,23 @@ export class NavComponent implements OnInit {
 
   ngOnInit() {}
 
+  // Grab auth status for links
   getAuth(): boolean {
     return this.authService.getAuthStatus();
   }
+  // Grab admin status for link
   getAdmin(): boolean {
     return this.authService.getAdminStatus();
   }
 
+  // On logout, reset both auth and admin status
   onLogout(): void {
     this.authService.setAuthStatus(false);
     this.authService.setAdminStatus(false);
     this.router.navigate([""]);
   }
 
+  // Navigate based on clicked link
   goHere(route: string) : void {
     this.router.navigate([route]);
   }

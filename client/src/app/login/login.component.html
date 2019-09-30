@@ -15,12 +15,8 @@
 
         <small>Don't have an account? Register<a id="registerLink" (click)="goHere('register')"> here</a>!</small>
         <button class="btn btn-lg btn-success btn-block" type="button" (click)="onLogin()">Login</button>
+        <div class="mt-4 alert alert-danger" *ngIf="error">{{errMsg}}</div>
       </div>
     </form>
-  </div>
-
-  <div class="container">
-    <br />
-    <div class="alert alert-danger" *ngIf="error">{{errMsg}}</div>
   </div>
 </main>
