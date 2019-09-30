@@ -13,7 +13,7 @@
           <input type="password" id="inputPassword" class="form-control" name="password" placeholder="Password" [(ngModel)]="password" required autocomplete="current-password">
         </div>
 
-        <small>Don't have an account? Register<a (click)="goHere('register')"> -here-!</a></small>
+        <small>Don't have an account? Register<a id="registerLink" (click)="goHere('register')"> here</a>!</small>
         <button class="btn btn-lg btn-success btn-block" type="button" (click)="onLogin()">Login</button>
       </div>
     </form>

@@ -170,15 +170,36 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/admin/data",
+					"raw": "http://localhost:3000/users/data",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
 					"path": [
-						"admin",
+						"users",
 						"data"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET User Data by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/users/data/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"data",
+						"1"
 					]
 				}
 			},
