@@ -59,9 +59,4 @@ export class LoginComponent implements OnInit {
       });
     }
   }
-
-  // Navigate based on clicked link
-  goHere(route: string) : void {
-    this.router.navigate([route]);
-  }
 }
