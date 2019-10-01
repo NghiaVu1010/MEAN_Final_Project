@@ -10,8 +10,8 @@ CREATE TABLE users (
 	is_admin	smallint(1) NOT NULL DEFAULT 0,
 	createdAt   TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	updatedAt   TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-	UNIQUE		UQ_USER_1 (USER_NAME),
-	PRIMARY KEY(ID)
+	UNIQUE		(username, email),
+	PRIMARY KEY (ID)
 );
 
 INSERT INTO users (username, email, password, is_admin) VALUES ('Neo', 'Neo@test.com', 'password1', 1);
@@ -25,6 +25,7 @@ INSERT INTO users (username, email, password, is_admin) VALUES ('Cori', 'Cori@te
 #SELECT * FROM users WHERE is_admin = 0;
 #SELECT * FROM users WHERE username = 'Neo' AND password = 'password1';
 
+#SELECT id FROM users WHERE username = 'Neo';
 #SELECT username, email FROM users WHERE id = 1;
 
 #INSERT INTO users (username, email, password, is_admin) VALUES ('Ray', 'Ray@test.com', 'password7', 0);
@@ -33,5 +34,5 @@ INSERT INTO users (username, email, password, is_admin) VALUES ('Cori', 'Cori@te
 #UPDATE users SET email = 'Neo@gmail.com' WHERE id = 1;
 #SELECT * FROM users;
 
-#DELETE * FROM users WHERE id = 1;
+#DELETE FROM users WHERE id = 1;
 #SELECT * FROM users;
