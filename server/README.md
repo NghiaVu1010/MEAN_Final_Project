@@ -13,7 +13,7 @@ $ npm install
 + creds: DBA
 
 + Create PostgreSQL DB User as defined above
-+ Create a DB named demo in PostgreSQL using [pgAdmin4](http://127.0.0.1:49799/browser/)
++ Create a DB named hca in PostgreSQL using [pgAdmin4](http://127.0.0.1:49799/browser/)
 + Execute the following to build and populate the DB with test data
 ```
 $ cd db
