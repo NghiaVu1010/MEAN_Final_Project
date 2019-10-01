@@ -1,6 +1,6 @@
 # MEAN_Final_Project
 
-# Iron Chef Tournament
+## Iron Chef Tournament
 
 ## Goal
   Iron Chef is a cooking competition that pits you in a gauntlet against other rival teams. Sign up and compete to see who will be crowned the next King of Iron Chef!
