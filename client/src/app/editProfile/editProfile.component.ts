@@ -25,7 +25,7 @@ export class EditProfileComponent implements OnInit {
 
   ngOnInit() {
     // Check to see if user is Auth to be here
-    if(!this.authService.getAdminStatus()) {
+    if(!this.authService.getAuthStatus()) {
       this.router.navigate(['login']);
     }
 
